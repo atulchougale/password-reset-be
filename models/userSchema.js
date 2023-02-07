@@ -71,7 +71,7 @@ userSchema.methods.generateAuthtoken = async function () {
         let token1 = jwt.sign({ _id: this._id }, keysecret, {
             expiresIn: "1d"
         });
-        console.log(token1,"token1")
+        // console.log(token1,"token1")
         this.tokens = this.tokens.concat({ token: token1 });
         await this.save();
         return token1;
